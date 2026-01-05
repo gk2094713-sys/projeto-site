@@ -1,24 +1,78 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Curso de HTML</title>
-    <link rel="stylesheet" href="estilos/style.css">
+<meta charset="UTF-8">
+<title>Universal Scripts Hub - Download</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{
+  background:#0b1220;
+  color:white;
+  font-family:Arial;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  height:100vh;
+  margin:0;
+}
+.box{
+  background:#1e293b;
+  padding:25px;
+  border-radius:18px;
+  text-align:center;
+  width:90%;
+  max-width:320px;
+}
+button{
+  background:#22c55e;
+  color:black;
+  border:none;
+  padding:14px;
+  border-radius:12px;
+  font-size:18px;
+  width:100%;
+  margin-top:15px;
+}
+small{color:#94a3b8}
+</style>
 </head>
 <body>
-    <main>
-        <header>
-            <h1>Curso de HTML5 e CSS3</h1>
-        </header>
-        <article>
-            <p>A <abbr title="HyperText Markup Language">HTML</abbr> é uma linguagem de marcação para a criação de sites. Atualmente na versão 5, ela usa a semântica dos elementos para criar o conteúdo de uma página Web. Com as <abbr title="Cascading Style Sheets">CSS</abbr>, criamos as configurações visuais que um site vai ter.</p>
 
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/riSVzwlSnhw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="box">
+  <h2>🌐 Universal Scripts Hub 🌐</h2>
+  <p>Baixe o app no seu celular</p>
+  <button onclick="baixar()">⬇️ Baixar App</button>
+  <small>Depois abra pelo gerenciador de arquivos</small>
+</div>
 
-            <a href="index.html"><img src="imagens/btn-back.png" alt="Voltar"></a>
-            
-        </article>
-    </main>
+<script>
+function baixar(){
+  const conteudo = `
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Universal Scripts Hub</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{margin:0;font-family:Arial;background:#0b1220;color:white}
+.header{text-align:center;padding:14px;font-size:20px;font-weight:bold;color:#38bdf8}
+</style>
+</head>
+<body>
+<div class="header">🌐 Universal Scripts Hub 🌐</div>
+<p style="text-align:center">App instalado com sucesso ✅</p>
+</body>
+</html>
+  `;
+
+  const blob = new Blob([conteudo], {type: "text/html"});
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(blob);
+  link.download = "UniversalScriptsHub.html";
+  link.click();
+}
+</script>
+
 </body>
 </html>
